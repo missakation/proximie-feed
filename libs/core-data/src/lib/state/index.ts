@@ -1,7 +1,5 @@
 import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-
 import * as fromNews from './news/news.reducer';
-
 import { News } from '../news/news.model';
 
 export interface AppState {

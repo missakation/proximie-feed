@@ -1,6 +1,5 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { News } from '@workshop/core-data';
-
 import { NewsActions, NewsActionTypes } from './news.actions';
 
 /**

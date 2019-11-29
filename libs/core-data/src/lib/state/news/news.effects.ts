@@ -15,6 +15,7 @@ import { NewsState } from './news.reducer';
 
 @Injectable({ providedIn: 'root' })
 export class NewsEffects {
+
   @Effect() effect$ = this.actions$.pipe(ofType(NewsActionTypes.NewsAction));
 
   @Effect()
@@ -34,5 +35,7 @@ export class NewsEffects {
     private actions$: Actions,
     private dataPersistence: DataPersistence<NewsState>,
     private newsService: NewsService
-  ) { }
+  ) { 
+    
+  }
 }

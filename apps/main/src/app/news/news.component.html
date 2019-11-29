@@ -1,13 +1,28 @@
-<div>
-  <mat-form-field>
-    <mat-icon matPrefix>search</mat-icon>
-    <input matInput type="search" placeholder="search here" class="search-input">
-  </mat-form-field>
-</div>
 <div class="container">
   <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>News</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-icon matPrefix>search</mat-icon>
+          <input #searchbox matInput type="search" placeholder="search here" class="search-input">
+        </mat-form-field>
+        <mat-list>
+          <mat-list-item *ngFor="let item of news$ | async; trackBy: trackProject" (click)="selected.emit(item)"
+            class="record">
+            <h3 mat-line>{{item.webTitle}}</h3>
+            <p mat-line>
+              {{item.webTitle}}
+            </p>
+            <!-- <h6>{{item.webPublicationDate | date:'medium'}}</h6> -->
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
 
-    <app-news-list [news]="news$ | async">
-    </app-news-list>
   </div>
 </div>

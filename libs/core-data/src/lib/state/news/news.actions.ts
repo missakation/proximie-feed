@@ -19,7 +19,7 @@ export class NewsSelected implements Action {
 
 export class LoadNews implements Action {
   readonly type = NewsActionTypes.LoadNews;
-  constructor() { }
+  constructor(searchCriteria: String, pageNumber: number) { }
 }
 
 export class NewsLoaded implements Action {
@@ -31,4 +31,4 @@ export type NewsActions = NewsRead
   | NewsSelected
   | LoadNews
   | NewsLoaded
-;
+  ;

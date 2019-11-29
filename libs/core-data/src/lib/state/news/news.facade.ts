@@ -9,6 +9,7 @@ import { NewsState } from './news.reducer';
   providedIn: 'root'
 })
 export class NewsFacade {
+  
   allNews$ = this.store.pipe(select(selectAllNews));
   currentNews$ = this.store.pipe(select(selectCurrentNews));
 
@@ -18,7 +19,7 @@ export class NewsFacade {
     this.store.dispatch(new NewsActions.NewsSelected(itemId));
   }
 
-  loadNews() {
-    this.store.dispatch(new NewsActions.LoadNews());
+  loadNews(searchCriteria: String, pageNumber: number) {
+    this.store.dispatch(new NewsActions.LoadNews(searchCriteria, pageNumber));
   }
 }
