@@ -9,8 +9,6 @@
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
-    "server": "json-server server/db.json",
-    "server:auth": "node server/server.js",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
     "affected:libs": "./node_modules/.bin/nx affected:libs",
     "affected:build": "./node_modules/.bin/nx affected:build",

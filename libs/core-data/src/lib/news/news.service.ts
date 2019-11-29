@@ -16,14 +16,20 @@ export class NewsService {
   ) { }
 
   getUrl() {
-    return `${environment.apiEndpoint}${this.model}?api-key=${environment.apiKey} `;
+    return `${environment.apiEndpoint}${this.model}`;
   }
 
-  getUrlForId(id) {
-    return `${this.getUrl()}/${id}`;
+  // getUrlForId(id) {
+  //   return `${this.getUrl()}/${id}`;
+  // }
+
+  all(searchCriteria: String, pageNumber: number) {
+    return this.http.get<News[]>(this.getUrl() + this.queryBuilder(searchCriteria, pageNumber));
   }
 
-  all() {
-    return this.http.get<News[]>(this.getUrl());
+  queryBuilder(searchCriteria: String, pageNumber: number) {
+
+    return `?q=${searchCriteria}&page=${pageNumber}&api-key=${environment.apiKey}`
+
   }
 }

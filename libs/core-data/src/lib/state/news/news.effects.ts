@@ -14,13 +14,14 @@ import { NewsState } from './news.reducer';
 @Injectable({ providedIn: 'root' })
 export class NewsEffects {
 
-  @Effect() effect$ = this.actions$.pipe(ofType(NewsActionTypes.NewsAction));
+  @Effect()
+  effect$ = this.actions$.pipe(ofType(NewsActionTypes.NewsAction));
 
   @Effect()
   loadNews$ = this.dataPersistence.fetch(NewsActionTypes.LoadNews, {
     run: (action: LoadNews, state: NewsState) => {
-      return this.newsService.all().pipe(map((res: any) => {
-        return new NewsLoaded(res.response.results);
+      return this.newsService.all(action.searchCriteria, action.pageNumber).pipe(map((res: any) => {
+        return new NewsLoaded(res.response.results, action.searchCriteria, action.pageNumber);
       }))
     },
 
@@ -29,11 +30,11 @@ export class NewsEffects {
     }
   });
 
-  constructor( 
+  constructor(
     private actions$: Actions,
     private dataPersistence: DataPersistence<NewsState>,
     private newsService: NewsService
-  ) { 
-    
+  ) {
+
   }
 }

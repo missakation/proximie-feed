@@ -19,12 +19,26 @@ export class NewsSelected implements Action {
 
 export class LoadNews implements Action {
   readonly type = NewsActionTypes.LoadNews;
-  constructor(searchCriteria: String, pageNumber: number) { }
+  searchCriteria: String;
+  pageNumber: number;
+
+  constructor(searchCriteria: String, pageNumber: number) {
+    this.searchCriteria = searchCriteria;
+    this.pageNumber = pageNumber;
+  }
 }
 
 export class NewsLoaded implements Action {
+
   readonly type = NewsActionTypes.NewsLoaded;
-  constructor(public payload: News[]) { }
+  searchCriteria: String;
+  pageNumber: number;
+
+  constructor(public payload: News[], searchCriteria: String, pageNumber: number) {
+    this.searchCriteria = searchCriteria;
+    this.pageNumber = pageNumber;
+  }
+
 }
 
 export type NewsActions = NewsRead

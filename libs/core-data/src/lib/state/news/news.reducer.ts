@@ -23,8 +23,11 @@ export function newsReducer(state = initialState, action: NewsActions): NewsStat
     }
 
     case NewsActionTypes.NewsLoaded: {
+      if (action.pageNumber > 1) {
+        return adapter.upsertMany(action.payload, state);
+      }
       return adapter.addAll(action.payload, state);
-      //return adapter.upsertMany(action.payload, state);
+
     }
 
     default:
