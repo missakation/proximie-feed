@@ -27,6 +27,10 @@ export class NewsComponent implements OnInit {
     this.newsFacade.loadNews(this.searchCriteria, 1);
   }
 
+  openCurrentNews(selectedNews: News) {
+    window.open(selectedNews.webUrl, "_blank");
+  }
+
   ngAfterViewInit() {
 
     fromEvent(this.input.nativeElement, 'keyup')

@@ -24,6 +24,7 @@ export function newsReducer(state = initialState, action: NewsActions): NewsStat
 
     case NewsActionTypes.NewsLoaded: {
       return adapter.addAll(action.payload, state);
+      //return adapter.upsertMany(action.payload, state);
     }
 
     default:

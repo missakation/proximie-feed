@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
 import { map } from 'rxjs/operators';
-
-import { News } from '../../news/news.model';
 import { NewsService } from '../../news/news.service';
 
 import {

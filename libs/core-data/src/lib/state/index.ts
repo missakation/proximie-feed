@@ -35,7 +35,10 @@ export const selectCurrentNewsId = createSelector(
 const emptyNews: News = {
   id: null,
   webTitle: '',
-  webPublicationDate: ''
+  webPublicationDate: '',
+  webUrl: '',
+  sectionName: ''
+
 }
 
 export const selectCurrentNews = createSelector(
