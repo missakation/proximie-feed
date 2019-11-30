@@ -15,7 +15,7 @@ export class NewsComponent implements OnInit {
   @ViewChild('searchbox', { static: false }) input: ElementRef;
 
   private searchCriteria: String = "";
-  private pageNumber: number = 1;
+  private pageNumber = 1;
 
   constructor(private newsFacade: NewsFacade) {
   }

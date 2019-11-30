@@ -1,6 +1,6 @@
 
 ### Project Description: Data Feed Example
-The application will call Guardian News API and view results. The user has the option to search for news.
+The application will call Guardian News API and view the results. The user has the option to search for news.
 
 
 ### NRWL Workspace
