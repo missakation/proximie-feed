@@ -10,7 +10,16 @@ A NRWL workspace contains one or all of you Angular projects and libraries. It c
 
 ```
 npm install
-npm start
+ng serve
 ```
 
 This will serve the frontend on localhost:4200.
+
+
+## Deployment
+
+```
+ng build --prod
+```
+
+This will build the solution in production mode.

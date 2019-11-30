@@ -24,8 +24,10 @@ export function newsReducer(state = initialState, action: NewsActions): NewsStat
 
     case NewsActionTypes.NewsLoaded: {
       if (action.pageNumber > 1) {
+        //append to the list
         return adapter.upsertMany(action.payload, state);
       }
+      //replace the array with the new one.
       return adapter.addAll(action.payload, state);
 
     }

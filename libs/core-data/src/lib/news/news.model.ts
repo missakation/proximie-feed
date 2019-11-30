@@ -4,5 +4,4 @@ export interface News {
   webPublicationDate: string;
   webUrl: string;
   sectionName: string;
-  
 }

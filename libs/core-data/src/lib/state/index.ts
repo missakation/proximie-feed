@@ -11,7 +11,7 @@ export const reducers: ActionReducerMap<AppState> = {
 };
 
 // -------------------------------------------------------------------
-// PROJECTS SELECTORS
+// News SELECTORS
 // -------------------------------------------------------------------
 export const selectNewsState = createFeatureSelector<fromNews.NewsState>('news');
 

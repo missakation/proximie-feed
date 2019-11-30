@@ -10,7 +10,7 @@ import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
 })
 export class NewsComponent implements OnInit {
 
-  private news$: Observable<News[]> = this.newsFacade.allNews$;
+  public news$: Observable<News[]> = this.newsFacade.allNews$;
 
   @ViewChild('searchbox', { static: false }) input: ElementRef;
 
