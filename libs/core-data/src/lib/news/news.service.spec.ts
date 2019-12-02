@@ -15,4 +15,13 @@ describe('NewsService', () => {
     const service: NewsService = TestBed.get(NewsService);
     expect(service).toBeTruthy();
   });
+
+  //check whether the api call is fetching results.
+  it('shoud the news API call working', () => {
+    const service: NewsService = TestBed.get(NewsService);
+    service.all("", 1).subscribe(res => {
+      expect(res.length).toBeLessThanOrEqual(10);
+    })
+  });
+
 });
