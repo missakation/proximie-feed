@@ -15,6 +15,14 @@ ng serve
 
 This will serve the frontend on localhost:4200.
 
+## Testing
+
+```
+ng test
+```
+
+This will run all the test cases.
+
 
 ## Deployment
 
