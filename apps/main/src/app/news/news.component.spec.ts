@@ -1,6 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsComponent } from './news.component';
+import { CommonModule } from '@angular/common';
+import { NewsRoutingModule } from './news-routing.module';
+import { MaterialModule } from '@workshop/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
+import { StateModule } from 'libs/core-data/src/lib/state/state.module';
+import { NewsService } from '@workshop/core-data';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -8,9 +18,22 @@ describe('NewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [NewsComponent],
+      imports: [
+        CommonModule,
+        NewsRoutingModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        FormsModule,
+        EffectsModule,
+        StateModule,
+        HttpClientModule,
+        BrowserAnimationsModule
+
+      ],
+      providers: [Store, NewsService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

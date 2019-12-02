@@ -28,7 +28,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     UiToolbarModule,
-    MaterialModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
