@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { News, NewsFacade } from '@workshop/core-data';
-import { Observable, fromEvent, empty } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 
 @Component({
@@ -8,20 +8,17 @@ import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements AfterViewInit {
 
   public news$: Observable<News[]> = this.newsFacade.allNews$;
 
   @ViewChild('searchbox', { static: false }) input: ElementRef;
 
+  //initial values for the api parameters
   private searchCriteria: String = "";
   private pageNumber = 1;
 
   constructor(private newsFacade: NewsFacade) {
-  }
-
-  ngOnInit() {
-    this.loadPage();
   }
 
   loadPage() {
@@ -39,7 +36,9 @@ export class NewsComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    // Wait for 500ms, if there is a change in the input, then run the API call.
+    this.loadPage();
+
+    // Wait for 500 ms, if there is a change in the input, then run the API call.
     // To reduce API calls.
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(

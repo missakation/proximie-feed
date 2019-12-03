@@ -4,7 +4,7 @@ The application will call Guardian News API and view the results. The user has t
 
 
 ### NRWL Workspace
-A NRWL workspace contains one or all of you Angular projects and libraries. It creates a monorepo for your applications domains. Nx helps add extra layer of tooling that can help manage your enterprise applications.
+The project has been built on top of Nx workspace. Nx helps add extra layer of tooling that can help manage your enterprise applications.
 
 ## Getting Started
 
@@ -13,7 +13,13 @@ npm install
 ng serve
 ```
 
-This will serve the frontend on localhost:4200.
+## Code Quality
+
+```
+ng lint
+```
+
+It will evaluate the code quality based on the configartion set in 'jslint.json' files.
 
 ## Testing
 
@@ -31,3 +37,4 @@ ng build --prod
 ```
 
 This will build the solution in production mode.
+

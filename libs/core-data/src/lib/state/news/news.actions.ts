@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { News } from '@workshop/core-data';
 
+
 export enum NewsActionTypes {
   NewsAction = '[News] Action',
   NewsSelected = '[News] Selected',
@@ -8,6 +9,7 @@ export enum NewsActionTypes {
   NewsLoaded = '[News] Data Loaded'
 }
 
+//define the possible actions for news
 export class NewsRead implements Action {
   readonly type = NewsActionTypes.NewsAction;
 }

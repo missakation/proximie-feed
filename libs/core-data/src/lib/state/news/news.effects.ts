@@ -21,6 +21,7 @@ export class NewsEffects {
   loadNews$ = this.dataPersistence.fetch(NewsActionTypes.LoadNews, {
     run: (action: LoadNews, state: NewsState) => {
       return this.newsService.all(action.searchCriteria, action.pageNumber).pipe(map((res: any) => {
+        //return new actions which represents the news succesfully fetched.
         return new NewsLoaded(res.response.results, action.searchCriteria, action.pageNumber);
       }))
     },

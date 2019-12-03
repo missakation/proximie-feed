@@ -7,12 +7,3 @@ export const environment = {
   apiEndpoint: 'https://content.guardianapis.com/',
   apiKey: '347da270-35ab-4716-b16a-c2b522ff393d'
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { NewsService } from '@workshop/core-data';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StateModule } from 'libs/core-data/src/lib/state/state.module';
+import { StateModule } from '@workshop/core-data';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
